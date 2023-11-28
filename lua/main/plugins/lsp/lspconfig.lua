@@ -1,9 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
   event = { 'BufReadPre', 'BufNewFile' },
-  dependencies = {
-    'hrsh7th/cmp-nvim-lsp'
-  },
   config = function()
     local lspconfig = require('lspconfig')
 
@@ -17,8 +14,7 @@ return {
     })
 
     -- configure json and more server
-    lspconfig["biome"].setup({
-    })
+    lspconfig["biome"].setup({})
 
     -- configure lua server
     lspconfig["lua_ls"].setup({
@@ -33,15 +29,12 @@ return {
     })
 
     -- configure python server
-    lspconfig["pyright"].setup({
-    })
+    lspconfig["pyright"].setup({})
 
     -- configure toml server
-    lspconfig["taplo"].setup({
-    })
+    lspconfig["taplo"].setup({})
 
     -- configure yaml server
-    lspconfig["yamlls"].setup({
-    })
+    lspconfig["yamlls"].setup({})
   end,
 }

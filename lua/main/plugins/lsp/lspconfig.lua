@@ -1,12 +1,15 @@
 return {
   'neovim/nvim-lspconfig',
-  event = { 'BufReadPre', 'BufNewFile' },
+  event = {
+    'BufReadPre',
+    'BufNewFile',
+  },
   config = function()
     local lspconfig = require('lspconfig')
 
     -- configure bash server
-    lspconfig["bashls"].setup({
-	    filetypes = {
+    lspconfig['bashls'].setup({
+      filetypes = {
         'bash',
         'sh',
         'zsh',
@@ -14,27 +17,27 @@ return {
     })
 
     -- configure json and more server
-    lspconfig["biome"].setup({})
+    lspconfig['biome'].setup({})
 
     -- configure lua server
-    lspconfig["lua_ls"].setup({
+    lspconfig['lua_ls'].setup({
       settings = {
         Lua = {
           -- make the language server recognize "vim" global
           diagnostics = {
-            globals = { "vim" },
+            globals = { 'vim' },
           },
         },
       },
     })
 
     -- configure python server
-    lspconfig["pyright"].setup({})
+    lspconfig['pyright'].setup({})
 
     -- configure toml server
-    lspconfig["taplo"].setup({})
+    lspconfig['taplo'].setup({})
 
     -- configure yaml server
-    lspconfig["yamlls"].setup({})
+    lspconfig['yamlls'].setup({})
   end,
 }

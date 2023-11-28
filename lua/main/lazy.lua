@@ -16,9 +16,6 @@ require('lazy').setup({
   {import = 'main.plugins.lsp'}
 },
 {
-  defaults = {
-    version = '*'
-  },
   install = {
     colorscheme = { 'gruvbox-material' }
   },

@@ -1,1 +1,1 @@
-require("main.core.options")
+require('main.core.options')

@@ -1,7 +1,17 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
-  config = function()
+  opts = {
+    ensure_installed = {
+      'hypr',
+    },
+    auto_install = true,
+    highlight = {
+      enable = true,
+    },
+  },
+  config = function(_, opts)
+    require('nvim-treesitter.configs').setup(opts)
     local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
     parser_config.hypr = {
       install_info = {

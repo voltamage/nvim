@@ -2,9 +2,9 @@ return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
   opts = {
-    ensure_installed = {
-      'hypr',
-    },
+    -- ensure_installed = { -- installs on demand without this
+    --   'hypr',
+    -- },
     auto_install = true,
     highlight = {
       enable = true,

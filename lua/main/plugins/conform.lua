@@ -9,6 +9,7 @@ return {
     conform.setup({
       formatters_by_ft = {
         bash = { 'shfmt' },
+        json = { 'prettierd' },
         lua = { 'stylua' },
         sh = { 'shfmt' },
         yaml = { 'prettierd' },

@@ -30,7 +30,8 @@ return {
     })
     mason_tool_installer.setup({
       ensure_installed = {
-        'prettierd', -- yaml format
+        'jsonlint', -- json lint
+        'prettierd', -- json, yaml format
         'selene', -- lua lint
         'shellcheck', -- bash, sh, zsh lint
         'shfmt', -- bash, sh, zsh format

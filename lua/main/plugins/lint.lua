@@ -8,6 +8,7 @@ return {
     local lint = require('lint')
     lint.linters_by_ft = {
       bash = { 'shellcheck' },
+      json = { 'jsonlint' },
       lua = { 'selene' },
       sh = { 'shellcheck' },
       yaml = { 'yamllint' },

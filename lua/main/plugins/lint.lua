@@ -11,7 +11,7 @@ return {
       json = { 'jsonlint' },
       lua = { 'selene' },
       sh = { 'shellcheck' },
-      yaml = { 'yamllint' },
+      yaml = { 'yamllint' }, -- HACK: ansible-lint is being used by ansiblels, but it gets upset if declared here
       zsh = { 'shellcheck' },
     }
     local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })

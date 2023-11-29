@@ -19,17 +19,18 @@ return {
     })
     mason_lspconfig.setup({
       ensure_installed = {
+        'ansiblels', -- yaml
         'bashls', -- bash, sh, zsh
         'biome', -- json but supports more
         'lua_ls', -- lua
         'pyright', -- python NOTE: still lacks formatting and linter
         'taplo', -- toml
-        'yamlls', -- yaml
       },
       automatic_installation = true, -- not the same as ensure_installed
     })
     mason_tool_installer.setup({
       ensure_installed = {
+        'ansible-lint', -- yaml lint
         'jsonlint', -- json lint
         'prettierd', -- json, yaml format
         'selene', -- lua lint

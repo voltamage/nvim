@@ -38,6 +38,10 @@ return {
     lspconfig['taplo'].setup({})
 
     -- configure yaml server
-    lspconfig['yamlls'].setup({})
+    lspconfig['ansiblels'].setup({
+      filetypes = {
+        'yaml',
+      },
+    })
   end,
 }

@@ -1,18 +1,8 @@
-vim.g.mapleader = ' '
 --vim.g.loaded_netrw = 1        -- NOTE: this might help with neo-tree
 --vim.g.loaded_netrwPlugin = 1  -- NOTE: this might help with neo-tree
 
-vim.o.autoindent = true
-vim.o.clipboard = 'unnamedplus'
 --vim.o.cmdheight = 2 -- NOTE: allows hardtime to display alongside modes
-vim.o.expandtab = true
-vim.o.mouse = 'a'
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.shiftwidth = 2
-vim.o.tabstop = 2
 vim.o.termguicolors = true -- NOTE: relied on by neo-tree
-vim.o.wrap = false
 
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -28,15 +18,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  -- 'tpope/vim-fugitive',
-  {
-    'sainnhe/gruvbox-material',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd('colorscheme gruvbox-material')
-    end,
-  },
   -- {
   --   'NvChad/nvim-colorizer.lua',
   --   config = function()
@@ -52,17 +33,6 @@ require('lazy').setup({
   --   end,
   -- },
   {
-    'folke/todo-comments.nvim',
-    dependencies = {
-      'nvim-lua/plenary.nvim'
-    },
-    opts = {},
-  },
-  {
-    'numToStr/Comment.nvim',
-    config = true,
-  },
-  {
     'alker0/chezmoi.vim',
     lazy = false,
     init = function()
@@ -73,8 +43,7 @@ require('lazy').setup({
   {
     'nvim-treesitter/nvim-treesitter',
     config = function()
-      require('nvim-treesitter').setup({'nvim-treesitter/nvim-treesitter',
-      build = 'TSUpdate'})
+      require('nvim-treesitter').setup({ 'nvim-treesitter/nvim-treesitter', build = 'TSUpdate' })
     end,
   },
   -- {
@@ -95,15 +64,6 @@ require('lazy').setup({
   --   opts = {},
   -- },
   {
-  'nvim-telescope/telescope.nvim', branch = '0.1.x',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-tree/nvim-web-devicons',
-      'nvim-treesitter/nvim-treesitter',
-    },
-    config = true,
-  },
-  {
     'nvim-neorg/neorg',
     build = ':Neorg sync-parsers', -- BUG: does not seem to trigger properly, complains on first run
     dependencies = {
@@ -111,7 +71,7 @@ require('lazy').setup({
       'nvim-treesitter/nvim-treesitter',
     },
     config = function()
-      require('neorg').setup {
+      require('neorg').setup({
         load = {
           ['core.defaults'] = {}, -- Loads default behaviour
           ['core.concealer'] = {}, -- Adds pretty icons to your documents
@@ -120,25 +80,13 @@ require('lazy').setup({
               workspaces = {
                 dotfiles = '~/dotfiles/org',
               },
-              default_workspace = 'dotfiles'
+              default_workspace = 'dotfiles',
             },
           },
         },
-      }
+      })
       vim.wo.conceallevel = 2 -- TODO: difference between vim.o and vim.wo
     end,
-  },
-  {
-  'VonHeikemen/lsp-zero.nvim',
-  branch = 'v3.x',
-    dependencies = {
-      'L3MON4D3/LuaSnip',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/nvim-cmp',
-      'neovim/nvim-lspconfig',
-      'williamboman/mason-lspconfig.nvim',
-      'williamboman/mason.nvim',
-    },
   },
   -- {
   -- 'luckasRanarison/tree-sitter-hypr',
@@ -148,10 +96,6 @@ require('lazy').setup({
   --  config = true,
   --  cmd = 'Glow'
   --},
-  -- {
-  --   'xiyaowong/transparent.nvim',
-  --   config = true,
-  -- },
   -- {
   --   'folke/twilight.nvim', -- BUG: does nothing
   --   config = true,
@@ -201,7 +145,6 @@ require('lazy').setup({
   -- },
   defaults = {
     lazy = true,
-    version = '*',
   },
 })
 
@@ -214,34 +157,3 @@ require('lazy').setup({
 --   },
 --   filetype = "hypr",
 -- }
-
-local lsp_zero = require('lsp-zero')
-lsp_zero.on_attach(function(client, bufnr)
-  -- see :help lsp-zero-keybindings
-  -- to learn the available actions
-  lsp_zero.default_keymaps({buffer = bufnr})
-end)
--- see :help lsp-zero-guide:integrate-with-mason-nvim
--- to learn how to use mason.nvim with lsp-zero
-require('mason').setup({})
-require('mason-lspconfig').setup({
-  ensure_installed = {
-    'bashls',   -- bash, sh, zsh
-    'biome',    -- json but supports more
-    'lua_ls',   -- lua
-    'pyright',  -- python
-    'taplo',    -- toml
-    'yamlls',   -- yaml
-  },
-  handlers = {
-    lsp_zero.default_setup,
-  }
-})
-
-require('lspconfig')['bashls'].setup{
-	filetypes = {
-    'bash',
-    'sh',
-    'zsh',
-  },
-}

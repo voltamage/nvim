@@ -30,8 +30,10 @@ return {
     })
     mason_tool_installer.setup({
       ensure_installed = {
+        'prettierd', -- yaml format
         'selene', -- lua lint
         'stylua', -- lua format
+        'yamllint', -- yaml lint
       },
     })
   end,

@@ -32,6 +32,8 @@ return {
       ensure_installed = {
         'prettierd', -- yaml format
         'selene', -- lua lint
+        'shellcheck', -- bash, sh, zsh lint
+        'shfmt', -- bash, sh, zsh format
         'stylua', -- lua format
         'yamllint', -- yaml lint
       },

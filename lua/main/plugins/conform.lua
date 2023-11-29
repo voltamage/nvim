@@ -8,8 +8,11 @@ return {
     local conform = require('conform')
     conform.setup({
       formatters_by_ft = {
+        bash = { 'shfmt' },
         lua = { 'stylua' },
+        sh = { 'shfmt' },
         yaml = { 'prettierd' },
+        zsh = { 'shfmt' },
       },
       format_on_save = {
         lsp_fallback = true,

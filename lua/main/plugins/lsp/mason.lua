@@ -22,7 +22,7 @@ return {
         'bashls', -- bash, sh, zsh
         'biome', -- json but supports more
         'lua_ls', -- lua
-        'pyright', -- python
+        'pyright', -- python NOTE: still lacks formatting and linter
         'taplo', -- toml
         'yamlls', -- yaml
       },

@@ -4,19 +4,6 @@
 --vim.o.cmdheight = 2 -- NOTE: allows hardtime to display alongside modes
 vim.o.termguicolors = true -- NOTE: relied on by neo-tree
 
-local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    'git',
-    'clone',
-    '--filter=blob:none',
-    'https://github.com/folke/lazy.nvim.git',
-    '--branch=stable',
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
 require('lazy').setup({
   -- {
   --   'NvChad/nvim-colorizer.lua',
@@ -32,20 +19,6 @@ require('lazy').setup({
   --     })
   --   end,
   -- },
-  {
-    'alker0/chezmoi.vim',
-    lazy = false,
-    init = function()
-      vim.g['chezmoi#source_dir_path'] = '~/dotfiles/chezmoi'
-      vim.g['chezmoi#use_tmp_buffer'] = true
-    end,
-  },
-  {
-    'nvim-treesitter/nvim-treesitter',
-    config = function()
-      require('nvim-treesitter').setup({ 'nvim-treesitter/nvim-treesitter', build = 'TSUpdate' })
-    end,
-  },
   -- {
   --   'nvim-neo-tree/neo-tree.nvim',
   --   branch = 'v3.x',

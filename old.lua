@@ -88,9 +88,6 @@ require('lazy').setup({
       vim.wo.conceallevel = 2 -- TODO: difference between vim.o and vim.wo
     end,
   },
-  -- {
-  -- 'luckasRanarison/tree-sitter-hypr',
-  -- },
   --{
   --  'ellisonleao/glow.nvim',
   --  config = true,
@@ -147,13 +144,3 @@ require('lazy').setup({
     lazy = true,
   },
 })
-
--- local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
--- parser_config.hypr = {
---   install_info = {
---     url = "https://github.com/luckasRanarison/tree-sitter-hypr",
---     files = { "src/parser.c" },
---     branch = "master",
---   },
---   filetype = "hypr",
--- }

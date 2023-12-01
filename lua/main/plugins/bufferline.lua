@@ -6,6 +6,11 @@ return {
   },
   config = function()
     vim.opt.termguicolors = true
-    require('bufferline').setup({})
+    require('bufferline').setup({
+      options = {
+        diagnostics = 'nvim_lsp',
+        diagnostics_update_in_insert = false,
+      },
+    })
   end,
 }

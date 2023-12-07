@@ -22,6 +22,7 @@ return {
         'ansiblels', -- yaml
         'bashls', -- bash, sh, zsh
         'biome', -- json but supports more
+        'docker_compose_language_service', -- docker (yaml)
         'lua_ls', -- lua
         'pyright', -- python NOTE: still lacks formatting and linter
         'taplo', -- toml
@@ -31,6 +32,7 @@ return {
     mason_tool_installer.setup({
       ensure_installed = {
         'ansible-lint', -- yaml lint
+        'hadolint', -- docker (yaml)
         'jsonlint', -- json lint
         'prettierd', -- json, yaml format
         'selene', -- lua lint

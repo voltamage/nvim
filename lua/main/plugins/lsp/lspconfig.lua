@@ -38,7 +38,10 @@ return {
     lspconfig['taplo'].setup({})
 
     -- configure yaml server
-    lspconfig['ansiblels'].setup({})
-    lspconfig['docker_compose_language_service'].setup({})
+    lspconfig['docker_compose_language_service'].setup({
+      filetypes = {
+        'yaml',
+      },
+    })
   end,
 }

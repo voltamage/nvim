@@ -16,9 +16,6 @@ return {
       },
     })
 
-    -- configure json and more server
-    lspconfig['biome'].setup({})
-
     -- configure lua server
     lspconfig['lua_ls'].setup({
       settings = {
@@ -31,17 +28,7 @@ return {
       },
     })
 
-    -- configure python server
-    lspconfig['pyright'].setup({})
-
-    -- configure toml server
-    lspconfig['taplo'].setup({})
-
     -- configure yaml server
-    lspconfig['docker_compose_language_service'].setup({
-      filetypes = {
-        'yaml',
-      },
-    })
+    lspconfig['yamlls'].setup({})
   end,
 }

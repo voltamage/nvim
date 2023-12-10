@@ -19,22 +19,15 @@ return {
     })
     mason_lspconfig.setup({
       ensure_installed = {
-        'ansiblels', -- yaml
         'bashls', -- bash, sh, zsh
-        'biome', -- json but supports more
-        'docker_compose_language_service', -- docker (yaml)
         'lua_ls', -- lua
-        'pyright', -- python NOTE: still lacks formatting and linter
-        'taplo', -- toml
+        'yamlls', -- yaml
       },
       automatic_installation = true, -- not the same as ensure_installed
     })
     mason_tool_installer.setup({
       ensure_installed = {
-        'ansible-lint', -- yaml lint
-        'hadolint', -- docker (yaml)
-        'jsonlint', -- json lint
-        'prettierd', -- json, yaml format
+        'prettierd', -- yaml format
         'selene', -- lua lint
         'shellcheck', -- bash, sh, zsh lint
         'shfmt', -- bash, sh, zsh format

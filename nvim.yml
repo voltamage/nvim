@@ -1,0 +1,32 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: Install neovim packages
+      become: true
+      become_user: main
+      kewlfft.aur.aur:
+        name:
+          - fd
+          - git
+          - lazygit
+          - neovim-git
+          - ninja
+          - npm
+          - python-pynvim
+          - ranger
+          - ripgrep
+          - rustup
+          - tmux
+          - tree-sitter-cli
+          - ttf-jetbrains-mono-nerd
+          - ueberzugpp
+          - unzip
+          - wget
+
+    - name: Install rustup default toolchain
+      become: true
+      become_user: main
+      shell: rustup default stable

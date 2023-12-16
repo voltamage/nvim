@@ -9,6 +9,7 @@ return {
     lint.linters_by_ft = {
       bash = { 'shellcheck' },
       lua = { 'selene' },
+      python = { 'pylint' },
       sh = { 'shellcheck' },
       yaml = { 'yamllint' },
       zsh = { 'shellcheck' },

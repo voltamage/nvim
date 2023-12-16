@@ -21,13 +21,18 @@ return {
       ensure_installed = {
         'bashls', -- bash, sh, zsh
         'lua_ls', -- lua
+        'pyright', -- python
+        'rust_analyzer', -- rust lacks linter
         'yamlls', -- yaml
       },
       automatic_installation = true, -- not the same as ensure_installed
     })
     mason_tool_installer.setup({
       ensure_installed = {
+        'black', -- python format
+        'isort', -- python format
         'prettierd', -- yaml format
+        'pylint', -- python lint
         'selene', -- lua lint
         'shellcheck', -- bash, sh, zsh lint
         'shfmt', -- bash, sh, zsh format

@@ -10,6 +10,8 @@ return {
       formatters_by_ft = {
         bash = { 'shfmt' },
         lua = { 'stylua' },
+        python = { 'isort', 'black' },
+        rust = { 'rustfmt' },
         sh = { 'shfmt' },
         yaml = { 'prettierd' },
         zsh = { 'shfmt' },

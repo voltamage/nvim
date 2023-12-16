@@ -28,6 +28,12 @@ return {
       },
     })
 
+    -- configure rust server
+    lspconfig['pyright'].setup({})
+
+    -- configure rust server
+    lspconfig['rust_analyzer'].setup({})
+
     -- configure yaml server
     lspconfig['yamlls'].setup({})
   end,
